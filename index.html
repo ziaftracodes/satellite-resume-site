@@ -24,6 +24,17 @@
         :root { --bg: #ffffff; --text: #333333; --accent: #2c3e50; --border: #e0e0e0; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Outfit', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 2rem; line-height: 1.6; }
         .container { max-width: 800px; margin: 0 auto; padding: 2rem 3rem; background: #ffffff; }
+        @media print {
+            @page { margin: 10mm; }
+            body { padding: 0; line-height: 1.4; font-size: 0.95rem; }
+            .container { padding: 0; box-shadow: none; max-width: 100%; }
+            .item { page-break-inside: avoid; break-inside: avoid; margin-bottom: 0.75rem; }
+            h1 { font-size: 2rem; margin-top: 0; padding-bottom: 0.2rem; }
+            h2 { font-size: 1.15rem; margin-top: 1rem; margin-bottom: 0.5rem; padding-bottom: 0.2rem; }
+            .contact-info { margin-bottom: 1rem; }
+            a { text-decoration: underline; color: #2563eb; }
+            .page-break { break-before: page; page-break-before: always; margin-top: 0 !important; padding-top: 0 !important; display: block; }
+        }
         h1, h2, h3 { color: var(--accent); margin-top: 0; }
         h1 { font-size: 2.5rem; margin-bottom: 0.2rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; }
         h2 { font-size: 1.3rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; margin-top: 2rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -97,7 +108,7 @@
             </ul>
         </div>
 
-        <h2>Projects</h2>
+        <h2 class="page-break">Projects</h2>
         <div class="item">
             <div class="item-header">
                 <h3 class="item-title"><a href="https://npmjs.com/package/screenshotaf" target="_blank">ScreenshotAF (CLI Automation Suite)</a></h3>
@@ -123,9 +134,17 @@
         </div>
 
         <h2>Skills</h2>
-        <p>
-            <span class="badge">Next.js</span> <span class="badge">React</span> <span class="badge">TypeScript</span> <span class="badge">JavaScript</span> <span class="badge">Tailwind CSS</span> <span class="badge">Framer Motion</span> <span class="badge">GSAP</span> <span class="badge">Three.js</span> <span class="badge">PostgreSQL</span> <span class="badge">SQL</span> <span class="badge">Express.js</span> <span class="badge">Node.js</span> <span class="badge">MongoDB</span> <span class="badge">UI & UX Design</span> <span class="badge">Cursor (GenAI)</span> <span class="badge">Vibe Coding</span> <span class="badge">Git & GitHub</span> <span class="badge">Vercel</span> <span class="badge">Flutter</span> <span class="badge">REST API</span> <span class="badge">Prompt Engineering</span>
-        </p>
+        <div style="margin-bottom: 0.5rem;">
+            <p style="margin-bottom: 0.4rem;"><strong>Frontend:</strong> 
+                <span class="badge">Next.js</span> <span class="badge">React</span> <span class="badge">TypeScript</span> <span class="badge">JavaScript</span> <span class="badge">Tailwind CSS</span> <span class="badge">Framer Motion</span> <span class="badge">GSAP</span> <span class="badge">Three.js</span>
+            </p>
+            <p style="margin-bottom: 0.4rem;"><strong>Backend & DB:</strong> 
+                <span class="badge">Node.js</span> <span class="badge">Express.js</span> <span class="badge">PostgreSQL</span> <span class="badge">MongoDB</span> <span class="badge">SQL</span> <span class="badge">REST API</span>
+            </p>
+            <p style="margin-bottom: 0.4rem;"><strong>Tools & Others:</strong> 
+                <span class="badge">Git & GitHub</span> <span class="badge">Vercel</span> <span class="badge">UI & UX Design</span> <span class="badge">Cursor (GenAI)</span> <span class="badge">Prompt Engineering</span> <span class="badge">Flutter</span>
+            </p>
+        </div>
 
         <h2>Extra Curricular Activities</h2>
         <div class="item">
